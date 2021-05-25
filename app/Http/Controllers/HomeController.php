@@ -79,4 +79,14 @@ class HomeController extends Controller
     }
 
 
+    public function test2()
+    {
+        $data = [1, -1, 3, -4, 5, -2, 7, 4, 2];
+        $result = [];
+        foreach ($data as $item) {
+            if (in_array(($item * -1), $data) && $item > 0) array_push($result, $item);
+        }
+        sort($result);
+        return view('test2', compact('result', 'data'));
+    }
 }
